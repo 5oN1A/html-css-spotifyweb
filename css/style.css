@@ -3,15 +3,6 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
-/*****DEBUG*****/
-
-}
-.debug-level-1{
-    background-color: purple;
-}
-
-.debug-level-2{
-    background-color: greenyellow;
 }
 
 /*****LAYOUT*****/
@@ -42,12 +33,6 @@
     margin-right: 12px;
 }
 
-.new-playlist {
-    font-size: 14px;
-    font-weight: 700;
-    line-height: 38px;
-}
-
 .fa-user-circle {
     font-size: 24px;
     line-height: 24px;
@@ -56,12 +41,13 @@
 /***SIDEBAR***/
 
 .top-shell .side-bar {
-    width: 230px;
+    width: 40px;
     background-color: #000;
     color: #878787;
     display: flex;
     flex-direction: column;
-    padding-left: 20px;
+    height: 800px;
+    align-items: center;
 }
 
 .top-shell .side-bar .side-bar-middle {
@@ -74,16 +60,69 @@
     flex-shrink: 0;
 } 
 
+.top-shell .side-bar .side-bar-top .small-logo {
+    display: inline-block;
+    width: 22px;
+    text-align: center;
+    padding-top: 2px;
+    padding-bottom: 5px;
+}
+
+.top-shell .side-bar .side-bar-top .full-logo {
+  display: none;
+}
+
+.top-shell span {
+    display: none;
+}
+
+.top-shell .side-bar .side-bar-top ul li i {
+    font-size: 20px;
+    color: #878787;
+    width: 25px;
+    text-align: center;
+    padding: 5px 0;
+}
+
+.side-bar-middle-container {
+    display: none;
+}
+
+.top-shell .side-bar .side-bar-bottom i {
+    width: 25px;
+    text-align: center;
+    padding: 7px 0;
+}
+
+
+@media screen and (min-width: 416px){
+
+.top-shell .side-bar {
+    width: 230px;
+    padding-left: 20px;
+    align-items:flex-start
+}
+
+.top-shell span {
+    display: inline;
+}
+
 .top-shell .side-bar .side-bar-top {
     padding-top: 20px;
 }
 
-.top-shell .side-bar .side-bar-top .logo {
+.top-shell .side-bar .side-bar-top .small-logo {
+    display: none;
+}
+
+.top-shell .side-bar .side-bar-top .full-logo {
+    display: inline-block;
     width: 130px;
     padding-bottom: 20px;
 }
 
 .top-shell .side-bar ul li {
+    display: block;
     list-style: none;
     font-size: 12px;
     font-weight: 700;
@@ -91,14 +130,31 @@
 }
 
 .top-shell .side-bar .side-bar-top ul li a {
+    display: inline-block;
     text-decoration: none;
     color: #878787;
 }
 
 .top-shell .side-bar .side-bar-top ul li a i {
     font-size: 25px;
-    padding-right: 8px;
+    margin-right: 10px;
+    vertical-align: middle;
 }
+
+.top-shell .side-bar .side-bar-top ul li span {
+   line-height: 35px;
+   vertical-align: middle;
+}
+
+.side-bar-middle-container {
+    display: block;
+}
+.new-playlist {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 38px;
+}
+
 .top-shell .side-bar .side-bar-middle h4 {
     padding-top: 20px;
     padding-bottom: 10px;
@@ -126,14 +182,15 @@
     padding-bottom: 10px;
 }
 
-.top-shell .side-bar .side-bar-bottom .user-name {
-    vertical-align: top;
+.top-shell .side-bar .side-bar-bottom .user-name, .top-shell .side-bar .side-bar-bottom .installa-app {
+    vertical-align: middle;
 } 
 
 .top-shell .side-bar .side-bar-bottom i {
     padding-right: 10px;
+    vertical-align: middle;
 }
 
-
+}
 
 
