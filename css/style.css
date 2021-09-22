@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+/*****DEBUG*****/
+
+}
+.debug-level-1{
+    background-color: purple;
+}
+
+.debug-level-2{
+    background-color: greenyellow;
+}
+
+/*****LAYOUT*****/
+
+.top-shell {
+    display: flex;
+}
+
+
+
+.bottom-shell {
+    display: flex;
+    height: 70px;
+}
+
+.play-bar {
+    height: 100%;
+}
+
+/***SIDEBAR***/
+
+.top-shell .side-bar {
+    width: 230px;
+    background-color: #000;
+    color: #878787;
+}
