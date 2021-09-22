@@ -20,8 +20,6 @@
     display: flex;
 }
 
-
-
 .bottom-shell {
     display: flex;
     height: 70px;
@@ -31,10 +29,111 @@
     height: 100%;
 }
 
+/*****UTILITIES*****/
+
+.fa-plus {
+    color: black;
+    font-size: 20px;
+    background-color: #878787;
+    width: 38px;
+    height: 38px;
+    text-align: center;
+    line-height: 38px;
+    margin-right: 12px;
+}
+
+.new-playlist {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 38px;
+}
+
+.fa-user-circle {
+    font-size: 24px;
+    line-height: 24px;
+}
+
 /***SIDEBAR***/
 
 .top-shell .side-bar {
     width: 230px;
     background-color: #000;
     color: #878787;
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
 }
+
+.top-shell .side-bar .side-bar-middle {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.top-shell .side-bar .side-bar-top, .top-shell .side-bar .side-bar-bottom {
+    flex-shrink: 0;
+} 
+
+.top-shell .side-bar .side-bar-top {
+    padding-top: 20px;
+}
+
+.top-shell .side-bar .side-bar-top .logo {
+    width: 130px;
+    padding-bottom: 20px;
+}
+
+.top-shell .side-bar ul li {
+    list-style: none;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 35px;
+}
+
+.top-shell .side-bar .side-bar-top ul li a {
+    text-decoration: none;
+    color: #878787;
+}
+
+.top-shell .side-bar .side-bar-top ul li a i {
+    font-size: 25px;
+    padding-right: 8px;
+}
+.top-shell .side-bar .side-bar-middle h4 {
+    padding-top: 20px;
+    padding-bottom: 10px;
+    color: white;
+    font-size: 14px;
+}
+
+.top-shell .side-bar .side-bar-middle ul {
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.top-shell .side-bar .side-bar-bottom .install-row {
+    font-size: 12px;
+    font-weight: 700;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #878787;
+}
+
+.top-shell .side-bar .side-bar-bottom .user-row {
+    padding-top: 10px;
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    padding-bottom: 10px;
+}
+
+.top-shell .side-bar .side-bar-bottom .user-name {
+    vertical-align: top;
+} 
+
+.top-shell .side-bar .side-bar-bottom i {
+    padding-right: 10px;
+}
+
+
+
+
