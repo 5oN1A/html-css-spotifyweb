@@ -46,14 +46,16 @@
     color: #878787;
     display: flex;
     flex-direction: column;
-    height: 800px;
     align-items: center;
+    height: 100vh;
 }
 
 .top-shell .side-bar .side-bar-middle {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
+    flex-shrink: 1;
+    min-height: 0;
 }
 
 .top-shell .side-bar .side-bar-top, .top-shell .side-bar .side-bar-bottom {
@@ -84,6 +86,7 @@
     padding: 5px 0;
 }
 
+
 .side-bar-middle-container {
     display: none;
 }
@@ -94,8 +97,11 @@
     padding: 7px 0;
 }
 
+.main-container {
+    min-height: 800px;
+}
 
-@media screen and (min-width: 416px){
+@media screen and (min-width: 415px){
 
 .top-shell .side-bar {
     width: 230px;
@@ -129,6 +135,7 @@
     line-height: 35px;
 }
 
+
 .top-shell .side-bar .side-bar-top ul li a {
     display: inline-block;
     text-decoration: none;
@@ -147,8 +154,17 @@
 }
 
 .side-bar-middle-container {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    min-height: 200px;
 }
+
+.side-bar-middle-container .play-list-list {
+    flex-shrink: 1;
+    min-height: 0;
+    overflow: auto;
+}
+
 .new-playlist {
     font-size: 14px;
     font-weight: 700;
@@ -167,6 +183,10 @@
     padding-bottom: 20px;
 }
 
+.top-shell .side-bar .side-bar-bottom {
+    flex-shrink: 0;
+} 
+
 .top-shell .side-bar .side-bar-bottom .install-row {
     font-size: 12px;
     font-weight: 700;
@@ -184,10 +204,10 @@
 
 .top-shell .side-bar .side-bar-bottom .user-name, .top-shell .side-bar .side-bar-bottom .installa-app {
     vertical-align: middle;
+    padding-left: 20px;
 } 
 
 .top-shell .side-bar .side-bar-bottom i {
-    padding-right: 10px;
     vertical-align: middle;
 }
 
