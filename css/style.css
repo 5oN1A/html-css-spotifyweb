@@ -78,15 +78,6 @@
     display: none;
 }
 
-.top-shell .side-bar .side-bar-top ul li i {
-    font-size: 20px;
-    color: #878787;
-    width: 25px;
-    text-align: center;
-    padding: 5px 0;
-}
-
-
 .side-bar-middle-container {
     display: none;
 }
@@ -94,7 +85,6 @@
 .top-shell .side-bar .side-bar-bottom i {
     width: 25px;
     text-align: center;
-    padding: 7px 0;
 }
 
 .main-container {
@@ -142,8 +132,8 @@
     color: #878787;
 }
 
-.top-shell .side-bar .side-bar-top ul li a i {
-    font-size: 25px;
+.top-shell .side-bar .side-bar-top ul li a img {
+    width: 25px;
     margin-right: 10px;
     vertical-align: middle;
 }
