@@ -8,19 +8,216 @@
 /*****LAYOUT*****/
 
 .top-shell {
+    height: calc(100vh - 70px);
+    background-color: goldenrod;
     display: flex;
 }
 
-.bottom-shell {
+.side-bar {
+    color: #878787;
+    width: 40px;
+    background-color: #000;
     display: flex;
-    height: 70px;
-}
-
-.play-bar {
+    flex-direction: column;
+    align-items: center;
     height: 100%;
 }
 
-/*****UTILITIES*****/
+.side-bar-top, .side-bar-bottom {
+    flex-shrink: 0;
+} 
+
+.side-bar-middle {
+    height: 100%;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-container {
+    width: 100%;
+    height: 100%;
+    background-color:#141922;
+    padding-left: 20px;
+}
+
+.bottom-shell {
+    background-color: hotpink;
+    width: 100%;
+    position: fixed;
+    height: 70px;
+}
+
+/***SIDEBAR***/
+
+.side-bar-top .small-logo {
+    display: inline-block;
+    width: 25px;
+    text-align: center;
+    padding-top: 2px;
+    padding-bottom: 5px;
+}
+
+.side-bar-top .full-logo {
+  display: none;
+}
+
+.top-shell span {
+    display: none;
+}
+
+.side-bar-top ul li img {
+    width: 23px;
+    padding: 3px 0;
+}
+
+.side-bar-middle-container {
+    display: none;
+}
+
+.side-bar-bottom {
+    text-align: center;
+}
+
+.side-bar-bottom .download {
+    width: 12px;
+    padding-bottom: 10px;
+}
+
+.side-bar-bottom .profile {
+    background-color: grey;
+    border-radius: 50%;
+    width: 20px;
+    height:20px;
+    object-fit:cover;
+    margin-bottom: 5px;
+}
+
+/****MAIN****/
+
+.upgrade-section {
+    height: 70px;
+    width: 100%;
+    background-color: #080B12;
+    text-align: right;
+}
+
+.upgrade-section button {
+    border: 1px solid #c1c1c1;
+    padding: 10px 30px;
+    border-radius: 20px;
+    background-color:  #080B12;
+    color: white;
+    font-size: 10px;
+    font-weight: 600;
+    margin-top: 15px;
+}
+
+.main-nav-section ul {
+    list-style: none;
+    text-align: center;
+    margin-left: -5px;
+}
+
+.main-nav-section ul li{
+    display: inline-block;
+    list-style: none;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.main-nav-section ul li a {
+    text-decoration: none;
+    color: #878787;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 40px;
+}
+
+h2 {
+    color: white;
+    font-size: 20px;
+
+}
+
+.album-container {
+    display: flex;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (min-width: 500px){
+
+.side-bar {
+    width: 230px;
+    padding-left: 20px;
+    align-items:flex-start
+}
+
+.top-shell span {
+    display: inline;
+}
+
+.side-bar-top {
+    padding-top: 20px;
+}
+
+.side-bar-top .small-logo {
+    display: none;
+}
+
+.side-bar-top .full-logo {
+    display: inline-block;
+    width: 130px;
+    padding-bottom: 20px;
+}
+
+.side-bar ul li {
+    display: block;
+    list-style: none;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 35px;
+}
+
+.side-bar-top ul li a {
+    text-decoration: none;
+    color: #878787;
+}
+
+.side-bar-top ul li img {
+    width: 25px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+.side-bar-top ul li span {
+   line-height: 35px;
+   vertical-align: middle;
+}
+
+.side-bar-middle-container {
+    display: block;
+}
 
 .fa-plus {
     color: black;
@@ -33,171 +230,43 @@
     margin-right: 12px;
 }
 
-.fa-user-circle {
-    font-size: 24px;
-    line-height: 24px;
-}
-
-/***SIDEBAR***/
-
-.top-shell .side-bar {
-    width: 40px;
-    background-color: #000;
-    color: #878787;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100vh;
-}
-
-.top-shell .side-bar .side-bar-middle {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    flex-shrink: 1;
-    min-height: 0;
-}
-
-.top-shell .side-bar .side-bar-top, .top-shell .side-bar .side-bar-bottom {
-    flex-shrink: 0;
-} 
-
-.top-shell .side-bar .side-bar-top .small-logo {
-    display: inline-block;
-    width: 22px;
-    text-align: center;
-    padding-top: 2px;
-    padding-bottom: 5px;
-}
-
-.top-shell .side-bar .side-bar-top .full-logo {
-  display: none;
-}
-
-.top-shell span {
-    display: none;
-}
-
-.side-bar-middle-container {
-    display: none;
-}
-
-.top-shell .side-bar .side-bar-bottom i {
-    width: 25px;
-    text-align: center;
-}
-
-.main-container {
-    min-height: 800px;
-}
-
-@media screen and (min-width: 415px){
-
-.top-shell .side-bar {
-    width: 230px;
-    padding-left: 20px;
-    align-items:flex-start
-}
-
-.top-shell span {
-    display: inline;
-}
-
-.top-shell .side-bar .side-bar-top {
-    padding-top: 20px;
-}
-
-.top-shell .side-bar .side-bar-top .small-logo {
-    display: none;
-}
-
-.top-shell .side-bar .side-bar-top .full-logo {
-    display: inline-block;
-    width: 130px;
-    padding-bottom: 20px;
-}
-
-.top-shell .side-bar ul li {
-    display: block;
-    list-style: none;
-    font-size: 12px;
-    font-weight: 700;
-    line-height: 35px;
-}
-
-
-.top-shell .side-bar .side-bar-top ul li a {
-    display: inline-block;
-    text-decoration: none;
-    color: #878787;
-}
-
-.top-shell .side-bar .side-bar-top ul li a img {
-    width: 25px;
-    margin-right: 10px;
-    vertical-align: middle;
-}
-
-.top-shell .side-bar .side-bar-top ul li span {
-   line-height: 35px;
-   vertical-align: middle;
-}
-
-.side-bar-middle-container {
-    display: flex;
-    flex-direction: column;
-    min-height: 200px;
-}
-
-.side-bar-middle-container .play-list-list {
-    flex-shrink: 1;
-    min-height: 0;
-    overflow: auto;
-}
-
 .new-playlist {
     font-size: 14px;
     font-weight: 700;
     line-height: 38px;
 }
-
-.top-shell .side-bar .side-bar-middle h4 {
+.side-bar-middle h4 {
     padding-top: 20px;
     padding-bottom: 10px;
     color: white;
     font-size: 14px;
 }
 
-.top-shell .side-bar .side-bar-middle ul {
+.side-bar-middle ul {
     padding-top: 10px;
     padding-bottom: 20px;
 }
 
-.top-shell .side-bar .side-bar-bottom {
-    flex-shrink: 0;
-} 
-
-.top-shell .side-bar .side-bar-bottom .install-row {
+.side-bar-bottom .install-row {
     font-size: 12px;
     font-weight: 700;
     padding-bottom: 10px;
     border-bottom: 1px solid #878787;
 }
 
-.top-shell .side-bar .side-bar-bottom .user-row {
+.side-bar-bottom .user-row {
     padding-top: 10px;
     color: white;
     font-size: 14px;
     font-weight: 700;
     padding-bottom: 10px;
 }
-
-.top-shell .side-bar .side-bar-bottom .user-name, .top-shell .side-bar .side-bar-bottom .installa-app {
+.side-bar-bottom .user-name, .side-bar-bottom .installa-app {
     vertical-align: middle;
-    padding-left: 20px;
 } 
 
-.top-shell .side-bar .side-bar-bottom i {
+.side-bar-bottom i {
+    padding-right: 10px;
     vertical-align: middle;
 }
 
