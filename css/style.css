@@ -11,6 +11,7 @@
     height: calc(100vh - 70px);
     background-color: goldenrod;
     display: flex;
+    width: 100%;
 }
 
 .side-bar {
@@ -21,6 +22,7 @@
     flex-direction: column;
     align-items: center;
     height: 100%;
+    flex-shrink: 0;
 }
 
 .side-bar-top, .side-bar-bottom {
@@ -38,15 +40,33 @@
     width: 100%;
     height: 100%;
     background-color:#141922;
-    padding-left: 20px;
+    overflow: auto;
 }
 
-.bottom-shell {
-    background-color: hotpink;
+.play-bar-shell {
+    background-color: #282828;
+    padding: 0 5px;
     width: 100%;
     position: fixed;
     height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
+
+.play-bar-left, .play-bar-right {
+    min-width: 25%;
+    max-width: 40%;
+    flex-grow: 1;
+    flex-shrink: 1;
+    position: relative;
+}
+
+.play-bar-center {
+    flex-grow: 4;
+}
+
+
 
 /***SIDEBAR***/
 
@@ -85,7 +105,7 @@
 }
 
 .side-bar-bottom .profile {
-    background-color: grey;
+    background-color: #c1c1c1;
     border-radius: 50%;
     width: 20px;
     height:20px;
@@ -93,13 +113,14 @@
     margin-bottom: 5px;
 }
 
-/****MAIN****/
+/********************MAIN********************/
 
 .upgrade-section {
     height: 70px;
     width: 100%;
     background-color: #080B12;
     text-align: right;
+    padding-right: 5px;
 }
 
 .upgrade-section button {
@@ -111,6 +132,9 @@
     font-size: 10px;
     font-weight: 600;
     margin-top: 15px;
+}
+.main-nav-section, .albums-section {
+    padding: 0 15px;
 }
 
 .main-nav-section ul {
@@ -133,15 +157,165 @@
     font-weight: 700;
     line-height: 40px;
 }
+.albums-section {
+    padding-top: 20px;
+}
 
-h2 {
+.albums-section h2 {
     color: white;
     font-size: 20px;
+}
 
+.albums-section h5 {
+    color: #c1c1c1;
+    font-size: 10px;
+    padding: 10px 0;
 }
 
 .album-container {
     display: flex;
+    flex-wrap: wrap;
+    padding-top: 25px;
+    column-gap: 5px;
+}
+
+.album-card {
+    width: calc((100% /2) - 2px);
+}
+
+.img-card-container {
+    width: 100%;
+    text-align: center;
+} 
+
+.album-card img{
+    width: 100%;
+    height: auto;
+}
+
+.album-card .album-description {
+    text-align: center;
+    padding-bottom: 10px;
+
+}
+
+.album-card h3 {
+    color: white;
+    font-size: 13px;
+    padding: 10px 0;
+}
+
+.album-card .subtitle {
+    color: #878787;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+/********************PLAY-BAR-SHELL********************/
+
+.play-bar-left-container {
+    height: 80%;
+    display: flex;
+    align-items: flex-start;
+}
+
+.play-bar-left-container img {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+}
+
+.track-description {
+    padding-left: 5px;
+}
+
+.track-description h3{
+    font-size: 10px;
+    color: white;
+}
+
+.track-actions {
+}
+
+.track-name {
+    font-size: 9px;
+    color: #c1c1c1;
+    font-weight: 600;
+}
+.track-actions {
+    vertical-align: middle;
+}
+
+.track-actions i {
+    font-size: 12px;
+    color: #c1c1c1;
+    padding-left: 10px;
+}
+
+.play-bar-center-container {
+    width: 100%;
+    height: 80%;
+    color: white;
+    margin: auto;
+}
+
+.command-line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.command-line i {
+    font-size: 13px;
+    padding: 0 8px;
+    color: white;
+}
+
+.command-line .fa-play-circle {
+    font-size: 24px;
+    padding: 0 15px;
+}
+
+.progress-line {
+    display: flex;
+    align-items:center;
+    padding-top: 10px;
+    justify-content: center;
+
+}
+
+.time-before, .time-after {
+    font-size: 8px;
+    padding: 0 5px;
+}
+
+.time-bar {
+    border: 2px solid #5a5a5a;
+    flex-grow: 2;
+    height: 0px;
+    max-width: 550px;
+
+}
+
+.play-bar-right-container {
+    display: flex;
+    align-items: center;
+    color: white;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.play-bar-right-container i {
+    font-size: 10px;
+
+}
+
+.volume-bar{
+    flex-grow: 1;
+    border: 2px solid #5a5a5a;
+    height: 0px;
+    max-width: 110px;
+
 }
 
 
@@ -165,8 +339,7 @@ h2 {
 
 
 
-
-@media screen and (min-width: 500px){
+@media screen and (min-width: 576px){
 
 .side-bar {
     width: 230px;
@@ -272,4 +445,16 @@ h2 {
 
 }
 
+@media screen and (min-width: 768px) {
+    .album-card {
+        width: calc((100% /4) - 3px);
+    }
 
+}
+
+@media screen and (min-width: 992px) {
+    .album-card {
+        width: calc((100% /6) - 3px);
+    }
+
+}
