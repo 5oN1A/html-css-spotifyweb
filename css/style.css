@@ -30,10 +30,10 @@
 } 
 
 .side-bar-middle {
-    height: 100%;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
 }
 
 .main-container {
@@ -99,12 +99,12 @@
     text-align: center;
 }
 
-.side-bar-bottom .download {
+.side-bar-bottom .download-icon {
     width: 12px;
     padding-bottom: 10px;
 }
 
-.side-bar-bottom .profile {
+.side-bar-bottom .profile-icon {
     background-color: #c1c1c1;
     border-radius: 50%;
     width: 20px;
@@ -133,6 +133,11 @@
     font-weight: 600;
     margin-top: 15px;
 }
+
+.upgrade-section button:hover {
+    font-size: 12px;
+}
+
 .main-nav-section, .albums-section {
     padding: 0 15px;
 }
@@ -180,7 +185,7 @@
 }
 
 .album-card {
-    width: calc((100% /2) - 2px);
+    width: calc((100% /2) - 5px);
 }
 
 .img-card-container {
@@ -234,9 +239,6 @@
     color: white;
 }
 
-.track-actions {
-}
-
 .track-name {
     font-size: 9px;
     color: #c1c1c1;
@@ -254,9 +256,7 @@
 
 .play-bar-center-container {
     width: 100%;
-    height: 80%;
     color: white;
-    margin: auto;
 }
 
 .command-line {
@@ -265,15 +265,25 @@
     justify-content: center;
 }
 
+.play-container {
+    height: 30px;
+    width: 40px;
+}
+
 .command-line i {
     font-size: 13px;
-    padding: 0 8px;
+    margin: 0 10px;
     color: white;
 }
 
 .command-line .fa-play-circle {
     font-size: 24px;
-    padding: 0 15px;
+    text-align: center;
+    line-height: 30px;
+}
+
+.bigger-icon:hover {
+    font-size: 28px;
 }
 
 .progress-line {
@@ -281,7 +291,6 @@
     align-items:center;
     padding-top: 10px;
     justify-content: center;
-
 }
 
 .time-before, .time-after {
@@ -290,12 +299,24 @@
 }
 
 .time-bar {
-    border: 2px solid #5a5a5a;
+    border: 2px solid #c1c1c1;
     flex-grow: 2;
     height: 0px;
     max-width: 550px;
+    position: relative;
+}
+
+.time-bar::after {
+    content: "";
+    width: 10%;
+    height: 0px;
+    border: 2px solid #5a5a5a;
+    position: absolute;
+    top: 1;
+    left: 0;
 
 }
+
 
 .play-bar-right-container {
     display: flex;
@@ -307,15 +328,17 @@
 
 .play-bar-right-container i {
     font-size: 10px;
-
 }
 
 .volume-bar{
     flex-grow: 1;
-    border: 2px solid #5a5a5a;
+    border: 2px solid #c1c1c1;
     height: 0px;
     max-width: 110px;
+}
 
+.white-hover:hover {
+    color: white;
 }
 
 
@@ -337,14 +360,16 @@
 
 
 
-
-
-@media screen and (min-width: 576px){
+@media screen and (min-width: 600px){
 
 .side-bar {
     width: 230px;
     padding-left: 20px;
     align-items:flex-start
+}
+
+.side-bar-top, .side-bar-middle, .side-bar-bottom {
+    width: 100%;
 }
 
 .top-shell span {
@@ -362,7 +387,7 @@
 .side-bar-top .full-logo {
     display: inline-block;
     width: 130px;
-    padding-bottom: 20px;
+    padding-bottom: 25px;
 }
 
 .side-bar ul li {
@@ -383,16 +408,19 @@
     margin-right: 10px;
     vertical-align: middle;
 }
+
 .side-bar-top ul li span {
    line-height: 35px;
    vertical-align: middle;
 }
 
 .side-bar-middle-container {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
-.fa-plus {
+.side-bar-middle .fa-plus {
     color: black;
     font-size: 20px;
     background-color: #878787;
@@ -403,11 +431,12 @@
     margin-right: 12px;
 }
 
-.new-playlist {
+.side-bar-middle .new-playlist {
     font-size: 14px;
     font-weight: 700;
     line-height: 38px;
 }
+
 .side-bar-middle h4 {
     padding-top: 20px;
     padding-bottom: 10px;
@@ -416,8 +445,14 @@
 }
 
 .side-bar-middle ul {
+    flex-grow: 1;
     padding-top: 10px;
     padding-bottom: 20px;
+    overflow: auto;
+}
+
+.side-bar-bottom {
+    text-align: left;
 }
 
 .side-bar-bottom .install-row {
@@ -427,34 +462,38 @@
     border-bottom: 1px solid #878787;
 }
 
+
 .side-bar-bottom .user-row {
-    padding-top: 10px;
     color: white;
     font-size: 14px;
     font-weight: 700;
-    padding-bottom: 10px;
+    margin-top: 10px;
+    width: 100%;
 }
-.side-bar-bottom .user-name, .side-bar-bottom .installa-app {
+
+.side-bar-bottom .user-name, .side-bar-bottom .download-app {
     vertical-align: middle;
+    line-break: 20px;
+    padding-left: 10px;
 } 
 
-.side-bar-bottom i {
-    padding-right: 10px;
+.side-bar-bottom .download-icon, .side-bar-bottom .profile-icon {
     vertical-align: middle;
+    padding: 5px 0;
 }
 
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 700px) {
     .album-card {
-        width: calc((100% /4) - 3px);
+        width: calc((100% /4) - 5px);
     }
 
 }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1100px) {
     .album-card {
-        width: calc((100% /6) - 3px);
+        width: calc((100% /6) - 5px);
     }
 
 }
