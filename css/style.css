@@ -92,8 +92,16 @@
     padding: 3px 0;
 }
 
+.white-hover:hover .fa-plus {
+    background-color: white;
+}
+
 .side-bar-middle-container {
     display: none;
+}
+
+.white-hover:hover img {
+    filter: brightness(0) invert(1);
 }
 
 .side-bar-bottom {
@@ -103,6 +111,10 @@
 .side-bar-bottom .download-icon {
     width: 12px;
     padding-bottom: 10px;
+}
+
+.white-hover:hover .download-icon {
+    filter: brightness(0) invert(1);
 }
 
 .side-bar-bottom .profile-icon {
@@ -217,7 +229,7 @@
     left: 0;
 }
 
-.fa-play-circle {
+.album-card .fa-play-circle {
     font-size: 60px;
     display: none;
     color: white;
